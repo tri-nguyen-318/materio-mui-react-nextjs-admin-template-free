@@ -81,11 +81,11 @@ const VerticalNavLink = ({ item, navVisible, toggleNavVisibility }: Props) => {
       disablePadding
       className='nav-link'
       disabled={item.disabled || false}
-      sx={{ mt: 1.5, px: '0 !important' }}
+      sx={{ mt: 1.5, px: '0 !important', display: 'block' }}
     >
-      <Link passHref href={item.path === undefined ? '/' : `${item.path}`}>
+      <Link passHref href={item.path === undefined ? '/' : `${item.path}`} style={{ textDecoration: 'none' }}>
         <MenuNavLink
-          component={'a'}
+          component={'div'}
           className={isNavLinkActive() ? 'active' : ''}
           {...(item.openInNewTab ? { target: '_blank' } : null)}
           onClick={e => {
